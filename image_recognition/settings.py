@@ -119,6 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # TF_ROOT = 'C:/Users/vk046010/Cerner Corporation/OneDrive - Cerner Corporation/Projects/AP_ASSIGNMENT2/IMG_Reco/python_scripts/training/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
