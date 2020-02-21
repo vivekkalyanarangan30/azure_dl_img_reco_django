@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="../static/images/mlb_logo.ico" />	
+	<link rel="stylesheet" href="../static/css/header-second-bar.css">
+	<title>Deep Learning Solutions</title>	
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script src="../static/js/master.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../static/css/master.css">
+
+</head>
+
+<body>
+
+<header class="header-two-bars">
+	<div class="header-first-bar">
+		<div class="header-limiter">
+			<!-- <div class="col-md-2" style="float:left; max-height:100%;"><img alt="" src="../static/images/mlb_logo.ico" class="img-responsive"/></div> -->
+			<h1><a href="#">&nbsp;&nbsp;&nbsp;<span style="color:white;">Image Recognition Service</span></a></h1>
+		</div>
+
+	</div>
+</header>
+				
+<div class="container">
+<div class="col-md-6">
+	<div class="alert alert-danger" id="error_div">
+	  <strong>There was an Error while processing your request: </strong> 
+	  <p id="error_message"></p>
+	</div>
+	<form method="post" id="imgForm" enctype="multipart/form-data" action="{% url 'img_reco:predict' %}">
+		{% csrf_token %}
+		<div class="form-group">
+			<h3> <span class="label label-default">Upload Image</span> </h3>
+			<div class="input-group">
+				<span class="input-group-btn">
+					<span class="btn btn-default btn-file">
+						Browse… <input type="file" id="imgInp" accept="image/*" name="imgInp" />
+					</span>
+				</span>
+				<input type="text" class="form-control" readonly>
+			</div>
+			<img id='img-upload' name="image_upload"/>
+			<br><br>
+			<button class="btn btn-primary" type="submit" style="" id="tf_predict">Predict</button>
+		</div>
+	</form>
+
+	<div id="pred_response">
+		<h3> <span class="label label-default">Probability of House</span> </h3>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100" id="progress_bar" >
+			</div>
+		</div>
+	</div>
+
+	<div id="pred_response_b">
+		<h3> <span class="label label-default">Probability of Blueprint</span> </h3>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100" id="progress_bar_b" >
+			</div>
+		</div>
+	</div>
+
+	<div id="pred_response_o">
+		<h3> <span class="label label-default">Probability of Others</span> </h3>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100" id="progress_bar_o" >
+			</div>
+		</div>
+	</div>
+
+	<!-- <div id="img_width"></div>
+	<div id="img_height"></div> -->
+
+</div>
+</div>
+</body>
+
+</html>
