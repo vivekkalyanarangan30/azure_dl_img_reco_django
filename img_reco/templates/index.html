@@ -3,17 +3,18 @@
 <html>
 
 <head>
+	{% load static %}
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" href="../static/images/mlb_logo.ico" />	
-	<link rel="stylesheet" href="../static/css/header-second-bar.css">
+	<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="{% static 'images/mlb_logo.ico' %}" />	
+	<link rel="stylesheet" href="{% static 'css/header-second-bar.css' %}">
 	<title>Deep Learning Solutions</title>	
-	<script src="../static/js/jquery.min.js"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-	<script src="../static/js/master.js"></script>
+	<script src="{% static 'js/master.js' %}"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="../static/css/master.css">
+	<link rel="stylesheet" href="{% static 'css/master.css' %}">
 
 </head>
 
